@@ -4,97 +4,62 @@
 	font-weight: normal;
 	font-style: normal;
 }
-html {
+
+html, body {
+	margin: 0;
+	padding: 0;
 	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	position: relative; /* Ensure absolute elements position correctly */
 }
 
-@media (max-width: 2000px){
-	.context {
-		height: 100vh;
-		width: 100vw;
-		background-image: url(../Assets/Images/study.png);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		position: relative;
-	}
+img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover; /* Ensures the image covers the screen */
+	z-index: -1; /* Moves the image to the background */
+}
 
-	.context h1, .context p, .context h1 a {
-		color: black;
-		transform: rotate(-25deg);
-		font-family: Amsterdam,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		transition: text-shadow 0.3s ease-in-out; /* Add transition for smooth glow effect */
+.context {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Centers text properly */
+	text-align: center;
+	width: 80%;
+}
+
+.context h1, .context p {
+	color: black;
+	transform: rotate(-10deg);
+	font-family: Amsterdam, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	transition: text-shadow 0.3s ease-in-out;
+}
+
+.context h1 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.context p {
+	font-size: 1.2rem;
+}
+.context p:hover, .context h1:hover, .context h1 a:hover {
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+	color: white;
+}
+@media (max-width: 768px) {
+	.context {
+		width: 90%;
+		top: 60%;
 	}
 
 	.context h1, .context p {
-		position: relative;
-		top: 10px;
-		left: 50px;
-	}
-
-	.context h1:nth-of-type(2), .context p:nth-of-type(2) {
-		position: relative;
-		top: 10px;
-		left: 150px;
-	}
-
-	.context p {
-		font-size: 1.3rem;
-		top: -20px;
-		left: 90px;
-	}
-
-	.context p:nth-last-of-type(1) {
-		top: -20px;
-		left: 175px;
-	}
-	.context p:hover, .context h1:hover, .context h1 a:hover {
-		text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
-		color: white; 
-	}
-	p
-	{
-		user-select: none;
-	}
-}
-@media (max-width: 1024){
-	.context {
-		height: 100vh;
-		width: 100vw;
-		background-image: url(../Assets/Images/study.png);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		position: relative;
-	}
-
-	.context h1, .context p, .context h1 a {
-		color: black;
-		transform: rotate(-25deg);
-		font-family: Amsterdam,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		transition: text-shadow 0.3s ease-in-out; /* Add transition for smooth glow effect */
-	}
-
-	.context h1, .context p {
-		position: relative;
-		top: 10px;
-		left: 50px;
-	}
-
-	.context h1:nth-of-type(2), .context p:nth-of-type(2) {
-		position: relative;
-		top: 10px;
-		left: 150px;
-	}
-
-	.context p {
-		font-size: 1.3rem;
-		top: -20px;
-		left: 90px;
-	}
-
-	.context p:nth-last-of-type(1) {
-		top: -20px;
-		left: 175px;
+		transform: rotate(0deg);
+		font-size: 1rem;
 	}
 }
