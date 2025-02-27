@@ -21,13 +21,10 @@
 html{
 	background-color: var(--db);
 	overflow-x: hidden;
-	margin: 0;
-	padding: 0;
 	width: 100%;
 }
-.wrapper
-{
-	padding: 50px	;
+.wrapper {
+    padding: clamp(20px, 5vw, 50px);
 }
 @font-face {
 	font-family: 'OST';
@@ -61,7 +58,7 @@ html{
 	background-color: var(--db);
 	border: none;
 	min-width: 500px;
-	padding: 30px 0 30px;
+	min-height: 110px;
 	border-radius: 7px;
 	font-size: 2.5rem;
 	cursor: pointer;
@@ -69,10 +66,17 @@ html{
   }
   button:hover
   { 
-	box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-	transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.361);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+    transform: scale(1.02);
+    color: black;
   }
-  .scroll-down {
+  button:hover, a:hover
+  {
+	color: black;
+  }
+  .scroll-down 
+  {
 	position: absolute;
     bottom: 5px;
     right: 20px;
@@ -82,9 +86,31 @@ html{
     background-color: transparent;
     user-select: none;
 }
-button a {
+button a 
+{
     display: block;
     width: 100%; 
     height: 100%;
     text-align: center;
+    padding: 30px 0 30px;
+}
+.back-button 
+{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: clamp(1rem, 5vw, 2rem);
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+	
+}
+.back-button:hover 
+{
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
 }
