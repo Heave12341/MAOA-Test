@@ -108,3 +108,24 @@ button a
 {
     color: #d4af37;
 }
+.swal-custom-btn {
+  all: unset;
+  padding: 10px 50px;
+  background-color: #d4af37;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.swal-custom-title {
+  color: #d4af37 !important;
+
+}
+.swal-custom-text
+{
+  color: #fff !important;
+}
+.swal-custom-popup
+{
+  background-color: #1f2833;
+}
